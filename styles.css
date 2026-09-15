@@ -88,12 +88,12 @@ h2 { font-size: clamp(34px, 3.65vw, 46px); line-height: 1.2; letter-spacing: -.0
 }
 @media (prefers-reduced-motion: reduce) { .question-text { transition: none; } }
 .current-research { margin-top: 44px; padding-top: 36px; border-top: 1px solid var(--line); }
-.research-summary { max-width: 790px; }
+.research-summary { width: 100%; }
 .research-summary p { font-size: 17px; line-height: 1.7; margin: 0 0 18px; }
 .research-summary p:last-child { margin-bottom: 0; }
 .research-summary a { color: var(--heading); text-decoration-color: var(--line); }
 .research-summary a:hover, .research-summary a:focus-visible { text-decoration-color: currentColor; }
-.methods { width: 100%; max-width: 790px; margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
+.methods { width: 100%; margin-top: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
 .methods-copy { width: 100%; }
 .methods-copy h2 { color: var(--heading); font-size: 38px; line-height: 1.2; letter-spacing: -.03em; margin-bottom: 24px; }
 .methods-copy p { font-size: 17px; }
