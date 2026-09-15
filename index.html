@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Ramamurthy Lab at UC Riverside maps cellular and circuit mechanisms of attention in health and disease.">
+  <meta name="theme-color" content="#d0eeee">
+  <title>Ramamurthy Lab | UC Riverside</title>
+  <link rel="icon" href="/assets/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="stylesheet" href="/styles.css?v=2">
+  <script src="/script.js?v=2" defer></script>
+  <link rel="canonical" href="https://ramamurthylab.github.io/">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="Ramamurthy Lab home">
+      <img class="wordmark-logo" src="/assets/lab-logo.svg" width="160" height="111" alt="">
+      <span class="wordmark-text"><span class="wordmark-name">Ramamurthy Lab</span><span class="wordmark-affiliation">University of California, Riverside</span></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" hidden>Menu <span aria-hidden="true">+</span></button>
+    <nav id="main-nav" aria-label="Main navigation">
+      <a href="/" aria-current="page">Home</a>
+      <a href="/research/">Research</a>
+      <a href="/team/">Team</a>
+      <a href="/publications/">Publications</a>
+      <a href="/news/">News</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <h1 id="hero-title">Mapping cellular and circuit<br class="wide-break"> mechanisms of attention<br class="wide-break"> in health and disease.</h1>
+        <p class="hero-intro">We are interested in the interplay between cognition and perception. We investigate how experience dynamically shapes neural representations across timescales to guide adaptive behavior.</p>
+        <a class="text-link hero-link" href="/research/">Learn more <span aria-hidden="true">↘</span></a>
+      </div>
+      <figure class="hero-visual">
+        <!-- circuit:start -->
+<svg class="attention-circuit" xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" fill="none" role="img" aria-labelledby="circuit-title circuit-desc">
+  <title id="circuit-title">Selected cortical circuit motifs</title>
+  <desc id="circuit-desc">Balanced angular illustration of selected cortical inhibitory and feedforward circuit motifs. VIP inhibits SST neurons, which target pyramidal dendrites; NDNF inhibits PV neurons, which target the pyramidal perisomatic region. A lower excitatory neuron provides feedforward input to the pyramidal and PV neurons. Cell bodies are filled. Open circular terminals indicate inhibition and filled circular terminals indicate excitation. Each of the four interneurons has a distinct coordinated color. The background is transparent. This is a selection of connections, not a complete wiring diagram.</desc>
+  <!-- Editing identities are retained in IDs; no labels are displayed.
+       All synaptic terminals have the same radius. Inhibitory contacts are open;
+       excitatory contacts and all somata are filled as requested.
+       Every marker has an 8-unit visible gap to its postsynaptic target,
+       measured between painted edges, including strokes and angled surfaces.
+       Cell colors are illustrative, not a universal molecular palette.
+       Evidence and scope: see CIRCUIT-SOURCES.md. -->
+  <g stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="5.5">
+    <g id="pyramidal-neuron" stroke="#000000">
+      <path id="pyramidal-soma" fill="#000000" d="M300 280 270 332H330Z"/>
+      <path id="pyramidal-apical" d="M300 280V194L258 148V90"/>
+      <path id="pyramidal-apical-fork" d="M300 194 342 148V90"/>
+      <path id="pyramidal-tuft-left" d="M258 148 220 112"/>
+      <path id="pyramidal-tuft-right" d="M342 148 380 112"/>
+      <path id="pyramidal-basal-left" d="M270 332 243 363 218 372 M243 363 233 391"/>
+      <path id="pyramidal-basal-right" d="M330 332 357 363 382 372 M357 363 367 391"/>
+      <path id="pyramidal-axon" stroke-width="4.5" d="M300 332V429"/>
+    </g>
+    <g id="vip-interneuron" stroke="#724B9B">
+      <path id="vip-bipolar-soma" fill="#724B9B" d="M130 158 142 171V190L130 203 118 190V171Z"/>
+      <path id="vip-dendrite" d="M130 158V129L113 112 M130 129 147 112"/>
+      <path id="vip-to-sst" stroke-width="4.5" d="M130 203V256"/>
+      <circle id="vip-inhibitory-contact" stroke-width="4" cx="130" cy="263" r="7"/>
+    </g>
+    <g id="sst-interneuron" stroke="#3E5883">
+      <path id="sst-multipolar-soma" fill="#3E5883" d="M130 298 150 310V330L130 342 110 330V310Z"/>
+      <path id="sst-dendrites" d="M130 298V280 M110 310 91 291 73 282 M150 310 169 291 187 282 M110 330 85 355 65 364 M150 330 169 355 189 364"/>
+      <path id="sst-to-pyramidal-dendrite" stroke-width="4.5" d="M150 316H201L242 246H273.25"/>
+      <circle id="sst-inhibitory-contact" stroke-width="4" cx="280.25" cy="246" r="7"/>
+    </g>
+    <g id="ndnf-interneuron" stroke="#9C4273">
+      <path id="ndnf-horizontal-soma" fill="#9C4273" d="M446 100 470 87 494 100 470 113Z"/>
+      <path id="ndnf-dendrites" d="M446 100 426 84V64 M426 84H409 M494 100 514 84V64 M514 84H531 M470 87V61"/>
+      <path id="ndnf-to-pv" stroke-width="4.5" d="M470 113V156"/>
+      <circle id="ndnf-inhibitory-contact" stroke-width="4" cx="470" cy="163" r="7"/>
+    </g>
+    <g id="pv-interneuron" stroke="#5F7095">
+      <path id="pv-compact-soma" fill="#5F7095" d="M461 300H479L490 311V329L479 340H461L450 329V311Z"/>
+      <path id="pv-upper-dendrite" d="M470 300V180 M470 245 491 224"/>
+      <path id="pv-dendrites" d="M490 311 509 291 527 282 M490 329 515 354 535 364 M461 340 450 363 431 380"/>
+      <path id="pv-to-pyramidal-soma" stroke-width="4.5" d="M450 320H352.878"/>
+      <circle id="pv-inhibitory-contact" stroke-width="4" cx="345.878" cy="320" r="7"/>
+    </g>
+    <g id="layer-four-excitatory-neuron" stroke="#000000">
+      <path id="stellate-soma" fill="#000000" d="M290 560H310L320 570V590L310 600H290L280 590V570Z"/>
+      <path id="stellate-dendrites" d="M300 560V539L284 523 M300 539 316 523 M280 570 252 550H234 M280 590 255 613 235 619 M320 590 345 613 365 619 M320 570 348 550H366"/>
+      <path id="feedforward-to-pyramidal" stroke-width="4.5" d="M312 562 345 517V458L387.263 421V397.419"/>
+      <circle id="feedforward-pyramidal-excitatory-contact" fill="#000000" stroke-width="4" cx="387.263" cy="390.419" r="7"/>
+      <path id="feedforward-to-pv" stroke-width="4.5" d="M345 458 415.923 399.019"/>
+      <circle id="feedforward-pv-excitatory-contact" fill="#000000" stroke-width="4" cx="421.305" cy="394.543" r="7"/>
+    </g>
+    <g id="feedforward-sensory-input" stroke="#000000">
+      <path stroke-width="4.5" d="M300 704V626.75"/>
+      <circle id="sensory-input-excitatory-contact" fill="#000000" stroke-width="4" cx="300" cy="619.75" r="7"/>
+    </g>
+  </g>
+</svg>
+        <!-- circuit:end -->
+      </figure>
+    </section>
+  </main>
+</body>
+</html>
