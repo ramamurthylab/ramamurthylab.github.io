@@ -98,7 +98,7 @@
         const firstNewEntry = entries[previewCount];
         entries.forEach(entry => { entry.hidden = false; });
         toggle.setAttribute('aria-expanded', 'true');
-        toggle.textContent = 'Show fewer ' + label;
+        toggle.textContent = label === 'news' ? 'Show less news' : 'Show fewer ' + label;
         // Continue keyboard navigation with the newly revealed content without jumping down.
         const next = firstNewEntry?.querySelector('a, summary, button') || firstNewEntry?.querySelector('h3');
         if (next) {
