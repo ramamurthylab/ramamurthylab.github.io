@@ -152,7 +152,8 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 .pi-profile { display: grid; grid-template-columns: minmax(0, max-content) max-content; align-items: baseline; gap: 48px; width: 100%; min-width: 0; }
 .pi-details { min-width: 0; }
 .pi-profile .role { margin-bottom: 0; line-height: 1.5; }
-.team-photo {
+.team-photo,
+.news-gallery figure {
   margin: 0 auto;
   min-width: 0;
   width: min(100%, 680px);
@@ -204,17 +205,18 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 .news-entry { padding-block: 4px; }
 .news-entry[hidden] { display: none; }
 .news-entry + .news-entry { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); }
-.news-date { display: block; font-size: 15px; color: var(--muted); margin-bottom: 10px; }
-.news-entry h3 { font-size: clamp(23px, 2.6vw, 30px); line-height: 1.4; letter-spacing: -.02em; margin: 0; }
+.news-date { display: block; font-size: 15px; font-weight: 500; color: var(--heading); margin-bottom: 10px; }
+.news-entry h3 { font-size: clamp(21px, 2.3vw, 27px); line-height: 1.45; letter-spacing: -.02em; margin: 0; }
+.news-toggle { color: var(--heading); }
 .news-photos { margin-top: 14px; }
-.news-photos > summary { width: fit-content; padding-block: 5px; font-size: 16px; line-height: 1.5; cursor: pointer; }
+.news-photos > summary { width: fit-content; padding-block: 5px; color: var(--heading); font-size: 15px; line-height: 1.5; cursor: pointer; }
 .news-photos > summary span { text-decoration: underline; text-decoration-color: var(--line); text-decoration-thickness: 1px; text-underline-offset: .23em; }
 .news-photos > summary:hover span, .news-photos > summary:focus-visible span { text-decoration-color: currentColor; }
 .news-photos .news-photos-close-label, .news-photos[open] .news-photos-open-label { display: none; }
 .news-photos[open] .news-photos-close-label { display: inline; }
-.news-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 20px; margin-top: 16px; }
-.news-gallery figure { min-width: 0; margin: 0; }
-.news-gallery img { display: block; width: 100%; height: auto; }
+.news-gallery { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 20px; margin-top: 16px; }
+.news-gallery figure { width: fit-content; max-width: min(100%, 534px); margin: 0; }
+.news-gallery img { display: block; width: auto; max-width: 100%; height: auto; }
 .news-gallery figcaption { margin-top: 8px; font-size: 14px; line-height: 1.5; }
 .contact-section { background: var(--wash); }
 .contact-section .section-heading { text-align: left; }

@@ -1,8 +1,8 @@
 # Updating News
 
-Add each new `<article class="news-entry">` at the **top** of `.news-feed` in `news/index.html`, so the newest item appears first. The page initially shows as many complete entries as fit on the screen, newest first. When more entries are available, “Show all news” reveals them; “Show fewer news” returns to the compact view. Keep the `news-toggle` button after the feed.
+Add each new `<article class="news-entry">` at the **top** of `.news-feed` in `news/index.html`, so the newest item appears first. The page initially shows as many complete entries as fit on the screen, newest first. When more entries are available, “Show all news” reveals them; “Show less news” returns to the compact view. Keep the `news-toggle` button after the feed.
 
-Each entry needs a date and headline. Photos are optional: keep an entry without photos as a plain article, or add the `<details class="news-photos">` block shown below. Visitors can click **View photos** to open that entry’s photos and **Hide photos** to close them. Images keep their original proportions and are not cropped.
+Each entry needs a date and headline. Photos are optional: keep an entry without photos as a plain article, or add the `<details class="news-photos">` block shown below. Visitors can click **View photos** to open that entry’s photos and **Hide photos** to close them (use **View photo** / **Hide photo** for one image). Photos share the Team photo’s off-white frame, fine border, and soft shadow. Images keep their original proportions without cropping or upscaling, with a maximum displayed image width of 520px. Include the image’s actual pixel width and height on its `<img>` element to reserve space while it loads.
 
 Save photos in `assets/news/` using filenames without spaces. Commit the edited `news/index.html` and new photo files to the publishing branch to update the site.
 
