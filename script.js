@@ -48,9 +48,9 @@
 // Show complete entries that fit on the first screen, leaving room to expand.
 (() => {
   'use strict';
-  for (const [listId, toggleId, label] of [
-    ['publications-list', 'publications-toggle', 'publications'],
-    ['news-feed', 'news-toggle', 'news']
+  for (const [listId, toggleId, label, minimumVisible] of [
+    ['publications-list', 'publications-toggle', 'publications', 3],
+    ['news-feed', 'news-toggle', 'news', 1]
   ]) {
     const list = document.getElementById(listId);
     const toggle = document.getElementById(toggleId);
@@ -81,8 +81,8 @@
       const toggleSpace = toggle.getBoundingClientRect().height +
         (parseFloat(toggleStyle.marginTop) || 0) + (parseFloat(toggleStyle.marginBottom) || 0);
       const cutoff = bottoms.findIndex(bottom => bottom > viewportBottom - toggleSpace);
-      // Keep the first entry readable even on a screen too short for one full item.
-      previewCount = Math.max(1, cutoff === -1 ? entries.length : cutoff);
+      // Keep at least three publications available, even on smaller screens.
+      previewCount = Math.min(entries.length, Math.max(minimumVisible, cutoff === -1 ? entries.length : cutoff));
       entries.forEach((entry, index) => { entry.hidden = index >= previewCount; });
       toggle.hidden = previewCount === entries.length;
     }
