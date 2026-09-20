@@ -215,6 +215,14 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 .news-gallery figure { width: fit-content; max-width: min(100%, 534px); margin: 0; }
 .news-gallery img { display: block; width: auto; max-width: 100%; height: auto; }
 .news-gallery figcaption { margin-top: 8px; font-size: 14px; line-height: 1.5; }
+.news-gallery--pair { flex-wrap: nowrap; }
+/* The 14px basis accounts for the frame; remaining width follows each image's ratio. */
+.news-gallery--pair figure { flex: var(--photo-ratio, 1) 1 14px; }
+.news-gallery--pair img { width: 100%; }
+@media (max-width: 600px) {
+  .news-gallery--pair { flex-direction: column; align-items: center; }
+  .news-gallery--pair figure { flex: 0 1 auto; width: min(100%, 534px); }
+}
 .contact-section { background: var(--wash); }
 .contact-section .section-heading { text-align: left; }
 .contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; max-width: 820px; margin-inline: auto; column-gap: 40px; row-gap: 28px; }
