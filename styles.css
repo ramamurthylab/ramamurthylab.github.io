@@ -56,7 +56,7 @@
   src: url("assets/fonts/Manrope-SemiBold.ttf") format("truetype");
 }
 :root {
-  --paper: #e4dfdd;
+  --paper: #e8e5e3;
   --white: #ffffff;
   --ink: #000000;
   --muted: var(--ink);
