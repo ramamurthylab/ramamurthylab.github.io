@@ -1,6 +1,6 @@
 /* Place after the application's existing styles. */
 :root {
-  --paper: #ececf7;
+  --paper: #e2e5ff;
   --wash: var(--paper);
 }
 body {
