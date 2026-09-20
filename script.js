@@ -45,38 +45,80 @@
 
 })();
 
+// Show complete entries that fit on the first screen, leaving room to expand.
 (() => {
   'use strict';
-  const list = document.getElementById('publications-list');
-  const toggle = document.getElementById('publications-toggle');
-  if (!list || !toggle) return;
+  for (const [listId, toggleId, label] of [
+    ['publications-list', 'publications-toggle', 'publications'],
+    ['news-feed', 'news-toggle', 'news']
+  ]) {
+    const list = document.getElementById(listId);
+    const toggle = document.getElementById(toggleId);
+    if (!list || !toggle) continue;
+    const entries = [...list.children];
+    const section = list.closest('section');
+    if (!entries.length || !section) continue;
+    let expanded = false;
+    let previewCount = entries.length;
+    let frame = 0;
 
-  const previewYear = Number(list.dataset.previewYear);
-  const additionalPapers = [...list.children].filter(paper => {
-    const year = Number(paper.querySelector('.pub-year')?.textContent.trim());
-    return Number.isFinite(year) && year > 0 && year < previewYear;
-  });
-  if (!additionalPapers.length) return;
+    function fitPreview() {
+      if (expanded) return;
+      entries.forEach(entry => { entry.hidden = false; });
+      toggle.hidden = false;
+      toggle.textContent = 'Show all ' + label;
+      toggle.setAttribute('aria-expanded', 'false');
 
-  const setExpanded = expanded => {
-    for (const paper of additionalPapers) paper.hidden = !expanded;
-    toggle.setAttribute('aria-expanded', String(expanded));
-    toggle.textContent = expanded ? 'Show fewer publications' : 'Show all publications';
-  };
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    setExpanded(expanded);
-    if (expanded) {
-      additionalPapers[0].querySelector('a')?.focus({preventScroll: true});
-      additionalPapers[0].scrollIntoView({block: 'nearest'});
-    } else {
-      toggle.scrollIntoView({block: 'nearest'});
+      const pageBottomSpace = parseFloat(getComputedStyle(section).paddingBottom) || 0;
+      const viewportBottom = document.documentElement.clientHeight - pageBottomSpace;
+      const bottoms = entries.map(entry => entry.getBoundingClientRect().bottom + window.scrollY);
+      if (bottoms[bottoms.length - 1] <= viewportBottom) {
+        previewCount = entries.length;
+        toggle.hidden = true;
+        return;
+      }
+      const toggleStyle = getComputedStyle(toggle);
+      const toggleSpace = toggle.getBoundingClientRect().height +
+        (parseFloat(toggleStyle.marginTop) || 0) + (parseFloat(toggleStyle.marginBottom) || 0);
+      const cutoff = bottoms.findIndex(bottom => bottom > viewportBottom - toggleSpace);
+      // Keep the first entry readable even on a screen too short for one full item.
+      previewCount = Math.max(1, cutoff === -1 ? entries.length : cutoff);
+      entries.forEach((entry, index) => { entry.hidden = index >= previewCount; });
+      toggle.hidden = previewCount === entries.length;
     }
-  });
 
-  setExpanded(false);
-  toggle.hidden = false;
+    function scheduleFit() {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(fitPreview);
+    }
+
+    toggle.addEventListener('click', () => {
+      expanded = !expanded;
+      if (expanded) {
+        const firstNewEntry = entries[previewCount];
+        entries.forEach(entry => { entry.hidden = false; });
+        toggle.setAttribute('aria-expanded', 'true');
+        toggle.textContent = 'Show fewer ' + label;
+        // Continue keyboard navigation with the newly revealed content without jumping down.
+        const next = firstNewEntry?.querySelector('a, summary, button') || firstNewEntry?.querySelector('h3');
+        if (next) {
+          if (!next.matches('a, summary, button')) next.tabIndex = -1;
+          next.focus({preventScroll: true});
+        }
+      } else {
+        fitPreview();
+        toggle.focus({preventScroll: true});
+        toggle.scrollIntoView({block: 'nearest'});
+      }
+    });
+
+    fitPreview();
+    document.fonts.ready.then(scheduleFit);
+    window.addEventListener('load', scheduleFit);
+    window.addEventListener('resize', scheduleFit);
+    const header = document.querySelector('.site-header');
+    if (header && typeof ResizeObserver !== 'undefined') new ResizeObserver(scheduleFit).observe(header);
+  }
 })();
 
 // A quiet surprise: three separate visits to the pyramidal cell body.
@@ -124,34 +166,4 @@
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) resetVisits();
   });
-})();
-
-// Keep recent news visible; older entries can be expanded as the feed grows.
-(() => {
-  'use strict';
-  const feed = document.getElementById('news-feed');
-  const toggle = document.getElementById('news-toggle');
-  if (!feed || !toggle) return;
-
-  const count = Number(feed.dataset.previewCount);
-  const previewCount = Number.isInteger(count) && count > 0 ? count : 3;
-  const entries = [...feed.children].filter(entry => entry.classList.contains('news-entry'));
-  const olderEntries = entries.slice(previewCount);
-  if (!olderEntries.length) return;
-
-  function setExpanded(expanded) {
-    olderEntries.forEach(entry => { entry.hidden = !expanded; });
-    toggle.setAttribute('aria-expanded', String(expanded));
-    toggle.textContent = expanded ? 'Show fewer news items' : 'Show older news';
-  }
-
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-    setExpanded(expanded);
-    if (expanded) olderEntries[0].scrollIntoView({block: 'nearest'});
-    else toggle.scrollIntoView({block: 'nearest'});
-  });
-
-  setExpanded(false);
-  toggle.hidden = false;
 })();

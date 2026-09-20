@@ -1,6 +1,6 @@
 # Updating News
 
-Add each new `<article class="news-entry">` at the **top** of `.news-feed` in `news/index.html`, so the newest item appears first. All entries appear on the News page, newest first.
+Add each new `<article class="news-entry">` at the **top** of `.news-feed` in `news/index.html`, so the newest item appears first. The page initially shows as many complete entries as fit on the screen, newest first. When more entries are available, “Show all news” reveals them; “Show fewer news” returns to the compact view. Keep the `news-toggle` button after the feed.
 
 Each entry needs a date and headline. Photos are optional: keep an entry without photos as a plain article, or add the `<details class="news-photos">` block shown below. Visitors can click **View photos** to open that entry’s photos and **Hide photos** to close them. Images keep their original proportions and are not cropped.
 

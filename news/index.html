@@ -10,8 +10,8 @@
   <link rel="icon" type="image/png" href="/assets/favicon-32.png" sizes="32x32">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180">
-  <link rel="stylesheet" href="/styles.css?v=4">
-  <script src="/script.js?v=2" defer></script>
+  <link rel="stylesheet" href="/styles.css?v=8">
+  <script src="/script.js?v=3" defer></script>
   <link rel="canonical" href="https://ramamurthylab.github.io/news/">
 </head>
 <body>
@@ -33,14 +33,15 @@
   </header>
 
   <main id="main">
-    <section class="section wrap news-section" id="news" aria-labelledby="news-title">
+    <section class="section wrap news-section feed-section" id="news" aria-labelledby="news-title">
       <h1 class="visually-hidden" id="news-title">News</h1>
-      <div class="news-feed" id="news-feed" data-preview-count="3">
+      <div class="news-feed" id="news-feed">
         <article class="news-entry">
           <time class="news-date" datetime="2025-08">August 2025</time>
           <h3>The Ramamurthy Lab opens at the University of California, Riverside.</h3>
         </article>
       </div>
+      <button class="news-toggle feed-toggle" id="news-toggle" type="button" aria-expanded="false" aria-controls="news-feed" hidden>Show all news</button>
     </section>
   </main>
 </body>
