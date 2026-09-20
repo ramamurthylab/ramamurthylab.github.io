@@ -220,11 +220,12 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 /* The 14px basis accounts for the frame; remaining width follows each image's ratio. */
 .news-gallery--pair figure { flex: var(--photo-ratio, 1) 1 14px; }
 .news-gallery--pair img { width: 100%; }
-.news-item-with-photo { display: grid; grid-template-columns: 100px minmax(0, 1fr); align-items: center; gap: 24px; max-width: 720px; margin-block: 20px; }
-.news-side-photo { width: 100%; margin: 0; }
+.news-item-with-photo { display: grid; grid-template-columns: minmax(0, 1fr) 180px; align-items: stretch; gap: 28px; }
+.news-photo-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-width: 0; }
+.news-side-photo { width: 100%; margin: 0; align-self: start; }
 .news-side-photo img { display: block; width: 100%; height: auto; }
 @media (max-width: 600px) {
-  .news-item-with-photo { grid-template-columns: 80px minmax(0, 1fr); gap: 16px; }
+  .news-item-with-photo { grid-template-columns: minmax(0, 1fr) 120px; gap: 18px; }
   .news-gallery--pair { flex-direction: column; align-items: center; }
   .news-gallery--pair figure { flex: 0 1 auto; width: min(100%, 534px); }
 }
