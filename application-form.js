@@ -9,7 +9,7 @@
   const submit = form.querySelector('button[type="submit"]');
   const idInput = form.querySelector('[name="applicationId"]');
   const configuredUrl = String(window.LAB_APPLICATION_URL || '').trim();
-  const formUrl = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(configuredUrl) ? configuredUrl : '';
+  const formUrl = /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec(?:\?authuser=0)?$/.test(configuredUrl) ? configuredUrl : '';
   const hasBackend = typeof google !== 'undefined' && google.script && google.script.run;
   let pending = false;
   let received = false;
