@@ -1,5 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" fill="none" role="img" aria-labelledby="circuit-title circuit-desc">
-  <title id="circuit-title">Selected cortical circuit motifs</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="760" viewBox="0 0 600 760" fill="none" role="img" aria-label="Selected cortical circuit motifs" aria-describedby="circuit-desc">
   <desc id="circuit-desc">Balanced angular illustration of selected cortical inhibitory and feedforward circuit motifs. VIP inhibits SST neurons, which target pyramidal dendrites; NDNF inhibits PV neurons, which target the pyramidal perisomatic region. A lower excitatory neuron provides feedforward input to the pyramidal and PV neurons. Cell bodies are filled. Open circular terminals indicate inhibition and filled circular terminals indicate excitation. Each of the four interneurons has a distinct coordinated color. The background is transparent. This is a selection of connections, not a complete wiring diagram.</desc>
   <!-- Editing identities are retained in IDs; no labels are displayed.
        All synaptic terminals have the same radius. Inhibitory contacts are open;
