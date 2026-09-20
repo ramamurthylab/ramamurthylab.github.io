@@ -1,0 +1,8 @@
+/* Place after the application's existing styles. */
+:root {
+  --paper: #ececf7;
+  --wash: var(--paper);
+}
+body {
+  background: var(--paper);
+}
