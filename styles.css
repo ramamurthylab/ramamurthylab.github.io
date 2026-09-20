@@ -215,6 +215,8 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 .news-gallery { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 20px; margin-top: 24px; }
 .news-gallery figure { width: fit-content; max-width: min(100%, 534px); margin: 0; }
 .news-gallery img { display: block; width: auto; max-width: 100%; height: auto; }
+/* Trim the top 110px of this 1200 × 937 photo without stretching it. */
+.news-gallery .news-photo--mahi { width: 520px; aspect-ratio: 1200 / 827; height: auto; object-fit: cover; object-position: center bottom; }
 .news-gallery figcaption { margin-top: 8px; font-size: 14px; line-height: 1.5; }
 .news-gallery--pair { flex-wrap: nowrap; }
 /* The 14px basis accounts for the frame; remaining width follows each image's ratio. */
