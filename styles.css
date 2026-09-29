@@ -224,7 +224,8 @@ figcaption { color: var(--muted); font-size: 13px; line-height: 1.6; margin-top:
 .news-gallery--pair img { width: 100%; }
 .news-item-with-photo { display: grid; grid-template-columns: minmax(0, 1fr) 180px; align-items: stretch; gap: 28px; }
 .news-photo-copy { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; min-width: 0; }
-.news-photo-copy--welcome { justify-content: flex-start; gap: 8px; }
+.news-photo-copy--welcome { justify-content: flex-start; gap: 12px; }
+.news-photo-copy--welcome + .news-side-photo { transform: translateY(-8px); }
 .news-side-photo { width: 100%; margin: 0; align-self: start; }
 .news-side-photo img { display: block; width: 100%; height: auto; }
 @media (max-width: 600px) {
