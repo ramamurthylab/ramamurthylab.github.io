@@ -49,8 +49,7 @@
 (() => {
   'use strict';
   for (const [listId, toggleId, label, minimumVisible] of [
-    ['publications-list', 'publications-toggle', 'publications', 3],
-    ['news-feed', 'news-toggle', 'news', 1]
+    ['publications-list', 'publications-toggle', 'publications', 3]
   ]) {
     const list = document.getElementById(listId);
     const toggle = document.getElementById(toggleId);
