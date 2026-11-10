@@ -29,7 +29,7 @@
 .photo-event-grid--collage a:focus-visible { outline-offset: -4px; }
 .photo-event-grid--collage img { width: 100%; height: 100%; object-fit: cover; padding: 0; border: 0; box-shadow: none; }
 .photo-event-grid--collage .photo-collage--people img { object-position: center 22%; }
-.photo-event-grid--collage .photo-collage--small img { object-position: center bottom; }
+.photo-event-grid--collage .photo-collage--small img { object-position: center 85%; }
 @media (max-width: 700px) {
   .photo-gallery { grid-template-columns: 32px minmax(0, 1fr) 32px; column-gap: 6px; }
   .photo-event-arrow { width: 32px; height: 44px; }
