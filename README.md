@@ -9,8 +9,8 @@ This is a static website with no build step. Publish the `main` branch from `/(r
 ## Editing
 
 - Edit the homepage and inline circuit artwork in `index.html`.
-- Edit the other pages in `research/index.html`, `team/index.html`, `publications/index.html`, `news/index.html`, and `contact/index.html`.
-- Update navigation links in all six HTML files when adding a page.
+- Edit the other pages in `research/index.html`, `team/index.html`, `publications/index.html`, `news/index.html`, `photos/index.html`, and `contact/index.html`.
+- Update navigation links in all seven HTML files when adding a page.
 - Edit colors, typography, and layout in `styles.css`.
 - The figure in the Approach section is `assets/whisker-attention-figure.svg`.
 - News instructions and photo markup are in `NEWS-EDITING.md`.
@@ -21,6 +21,6 @@ The local assets include the map renderer and geography, fonts, images, and brow
 
 ## Uploading this release
 
-Extract the ZIP, open the extracted folder, and upload everything inside it to the repository root, replacing existing files. `index.html`, `styles.css`, and the `research`, `team`, `publications`, `news`, `contact`, and `assets` folders must appear directly on the repository main page. GitHub Pages remains set to publish `main` from `/(root)`.
+Extract the ZIP, open the extracted folder, and upload everything inside it to the repository root, replacing existing files. `index.html`, `styles.css`, and the `research`, `team`, `publications`, `news`, `photos`, `contact`, and `assets` folders must appear directly on the repository main page. GitHub Pages remains set to publish `main` from `/(root)`.
 
 DM Sans is self-hosted in `assets/fonts/` (variable normal and italic, Latin and extended Latin), sourced from Google Fonts and distributed under the bundled SIL Open Font License. Manrope remains a local fallback.
