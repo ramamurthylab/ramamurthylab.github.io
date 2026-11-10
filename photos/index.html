@@ -11,7 +11,9 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=4" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=4" sizes="180x180">
   <link rel="stylesheet" href="/styles.css?v=26">
+  <link rel="stylesheet" href="/photos/gallery.css?v=1">
   <script src="/script.js?v=4" defer></script>
+  <script src="/photos/gallery.js?v=1" defer></script>
   <link rel="canonical" href="https://ramamurthylab.github.io/photos/">
 </head>
 <body>
@@ -36,7 +38,21 @@
   <main id="main">
     <section class="section wrap" id="photos" aria-labelledby="photos-title">
       <h1 class="page-title" id="photos-title">Photos</h1>
-      <p>Photos coming soon.</p>
+      <p id="photos-empty">Photos coming soon.</p>
+      <div class="photo-gallery" id="photo-gallery" role="region" aria-label="Photos by event" hidden>
+        <div class="photo-event-controls" id="photo-event-controls" hidden>
+          <button class="photo-event-arrow photo-event-arrow--previous" type="button" aria-label="Previous event" aria-controls="photo-events" aria-disabled="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M17 3 3 12l14 9Z"/></svg>
+          </button>
+          <p class="photo-event-count" id="photo-event-count" aria-live="polite" aria-atomic="true"></p>
+          <button class="photo-event-arrow photo-event-arrow--next" type="button" aria-label="Next event" aria-controls="photo-events">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="m7 3 14 9-14 9Z"/></svg>
+          </button>
+        </div>
+        <div id="photo-events">
+          <!-- Add one .photo-event article per event; see PHOTOS-EDITING.md. -->
+        </div>
+      </div>
     </section>
   </main>
 </body>

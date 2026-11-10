@@ -14,6 +14,7 @@ This is a static website with no build step. Publish the `main` branch from `/(r
 - Edit colors, typography, and layout in `styles.css`.
 - The figure in the Approach section is `assets/whisker-attention-figure.svg`.
 - News instructions and photo markup are in `NEWS-EDITING.md`.
+- Event photo gallery instructions and markup are in `PHOTOS-EDITING.md`.
 - `application-config.js` sets the public Undergraduate RA application URL. The application is hosted separately by Google Apps Script; applicant responses and CVs are not stored in this repository.
 - `assets/attention-circuit.svg` retains the editable circuit source. When changing its geometry, update the matching inline SVG between the circuit markers in `index.html` as well.
 
