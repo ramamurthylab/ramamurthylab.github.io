@@ -44,11 +44,11 @@ when a control has keyboard focus.
 
 This event adds `photo-event-grid--collage` to the standard grid. Its four
 photos share one outer frame and fit in one row, alternating decorations and people:
-IMG_0040, IMG_0068, IMG_0064, IMG_0096. IMG_0064 is intentionally the smallest.
-Gentle rotations and shallow overlaps give the collage a natural feel.
-The people photo loses a little floor; IMG_0064 loses some empty whiteboard
-above the doll. Crops preserve faces, the model brain, and the main decorations.
-The spider photo is layered on top to protect the person at its left edge.
+IMG_0040, IMG_0068, IMG_0064, IMG_0096. IMG_0064 is intentionally the narrowest
+panel and has the smallest area. All four panels have the same height and touch
+edge to edge, without rotations, overlap, interior padding, or gaps.
+`object-fit: cover` crops the panels without stretching the images.
+The event title matches the publication-title font, size, weight, and black color.
 Every image still links to the uncropped original. The row
 scales down on narrow screens, with IMG_0064 remaining proportionally smaller.
 The gallery always reserves a column on each side for its triangular event
