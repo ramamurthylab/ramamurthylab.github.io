@@ -22,23 +22,24 @@
 .photo-event-grid img { display: block; width: 100%; height: auto; padding: 6px; background: #faf9f7; border: 1px solid rgba(0, 0, 0, .10); box-shadow: 0 2px 7px rgba(0, 0, 0, .07); }
 .photo-event-grid figcaption { margin-top: 10px; font-size: 15px; }
 .photo-event-grid a { display: block; }
-/* Uneven sizes and gentle angles echo a collection of framed prints.
-   Keep the full image visible; spacing accounts for the rotated corners. */
-.photo-event-grid--collage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); max-width: 1000px; margin-inline: auto; padding: 18px 14px 30px; gap: 20px; align-items: center; }
-.photo-event-grid--collage .photo-collage--people { margin-top: 10px; transform: rotate(1.5deg); }
-.photo-event-grid--collage .photo-collage--spider { margin-top: 16px; transform: rotate(1.5deg); }
-.photo-event-grid--collage .photo-collage--decorations { transform: rotate(-2deg); }
-.photo-event-grid--collage .photo-collage--small { margin-top: 30px; transform: rotate(-2.5deg); }
+/* One outer frame groups the photographs into a single overlapping collage. */
+.photo-event-grid--collage { --photo-overlap: 7px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); max-width: 1000px; margin-inline: auto; padding: 24px 18px; gap: 0; align-items: center; background: #eeeae5; border: 6px solid #faf9f7; outline: 1px solid rgba(0, 0, 0, .10); box-shadow: 0 2px 7px rgba(0, 0, 0, .07); isolation: isolate; }
+.photo-event-grid--collage figure { position: relative; width: calc(100% + 2 * var(--photo-overlap)); margin-inline: calc(-1 * var(--photo-overlap)); }
+.photo-event-grid--collage img { aspect-ratio: 3 / 4; height: auto; object-fit: cover; padding: 0; border: 0; box-shadow: 0 2px 5px rgba(0, 0, 0, .12); }
+.photo-event-grid--collage .photo-collage--decorations { z-index: 1; transform: rotate(-1.2deg); }
+.photo-event-grid--collage .photo-collage--people { z-index: 2; transform: rotate(1.4deg); }
+.photo-event-grid--collage .photo-collage--people img { object-position: center 22%; }
+.photo-event-grid--collage .photo-collage--small { z-index: 3; margin-top: 24px; transform: rotate(-2deg); }
+.photo-event-grid--collage .photo-collage--small img { aspect-ratio: .62; object-position: center bottom; }
+.photo-event-grid--collage .photo-collage--spider { z-index: 4; margin-top: 8px; transform: rotate(1.2deg); }
+.photo-event-grid--collage figure:focus-within { z-index: 5; }
 @media (max-width: 700px) {
   .photo-gallery { grid-template-columns: 32px minmax(0, 1fr) 32px; column-gap: 6px; }
   .photo-event-arrow { width: 32px; height: 44px; }
   .photo-event-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .photo-event-grid--collage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); padding: 10px 5px 20px; gap: 8px; }
-  .photo-event-grid--collage img { padding: 3px; }
-  .photo-event-grid--collage .photo-collage--people,
-  .photo-event-grid--collage .photo-collage--spider { margin-top: 4px; transform: rotate(1deg); }
-  .photo-event-grid--collage .photo-collage--decorations { transform: rotate(-1deg); }
-  .photo-event-grid--collage .photo-collage--small { margin-top: 12px; transform: rotate(-1.5deg); }
+  .photo-event-grid--collage { --photo-overlap: 3px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); padding: 14px 8px; gap: 0; border-width: 4px; }
+  .photo-event-grid--collage .photo-collage--small { margin-top: 10px; }
+  .photo-event-grid--collage .photo-collage--spider { margin-top: 3px; }
 }
 @media print {
   .photo-event-controls { display: none; }
