@@ -42,9 +42,11 @@ when a control has keyboard focus.
 
 ## Halloween 2026 collage
 
-This event adds `photo-event-grid--collage` to the standard grid. The figures
-use `photo-collage--people`, `photo-collage--spider`,
-`photo-collage--decorations`, and `photo-collage--small` for staggered sizing
-and gentle frame rotations. IMG_0064 is intentionally the smallest. Images
-keep their full proportions and link to the complete photo. On phones the
-figures stack with clear separation, with IMG_0064 still smaller.
+This event adds `photo-event-grid--collage` to the standard grid. Its four
+framed photos fit in one row, alternating decorations and people:
+IMG_0040, IMG_0068, IMG_0064, IMG_0096. IMG_0064 is intentionally the smallest.
+Gentle rotations and uneven vertical alignment give the row a natural feel.
+Images keep their full proportions and link to the complete photo. The row
+scales down on narrow screens, with IMG_0064 remaining proportionally smaller.
+The gallery always reserves a column on each side for its triangular event
+arrows, so adding a second event does not shift or shrink the photo row.

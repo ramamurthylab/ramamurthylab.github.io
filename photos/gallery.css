@@ -1,12 +1,17 @@
 .photo-gallery[hidden],
 .photo-event-controls[hidden],
 .photo-event[hidden] { display: none; }
-.photo-event-controls { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 16px; margin-bottom: 24px; }
+/* Always reserve the outside columns, even while a single event hides arrows. */
+.photo-gallery { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; column-gap: 12px; }
+#photo-events { grid-column: 2; grid-row: 1; min-width: 0; }
+.photo-event-controls { display: contents; }
 .photo-event-arrow { display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 3px; background: transparent; color: var(--heading); cursor: pointer; }
+.photo-event-arrow--previous { grid-column: 1; grid-row: 1; align-self: center; }
+.photo-event-arrow--next { grid-column: 3; grid-row: 1; align-self: center; }
 .photo-event-arrow svg { display: block; fill: currentColor; }
 .photo-event-arrow:hover:not([aria-disabled="true"]) { background: rgba(255, 255, 255, .45); }
 .photo-event-arrow[aria-disabled="true"] { opacity: .3; cursor: default; }
-.photo-event-count { margin: 0; text-align: center; color: var(--heading); font-size: 16px; line-height: 1.5; }
+.photo-event-count { grid-column: 2; grid-row: 2; margin: 12px 0 0; text-align: center; color: var(--heading); font-size: 16px; line-height: 1.5; }
 .photo-event + .photo-event { margin-top: 48px; }
 .photo-gallery--ready .photo-event { margin-top: 0; }
 .photo-event-heading { margin-bottom: 28px; text-align: center; }
@@ -19,19 +24,21 @@
 .photo-event-grid a { display: block; }
 /* Uneven sizes and gentle angles echo a collection of framed prints.
    Keep the full image visible; spacing accounts for the rotated corners. */
-.photo-event-grid--collage { max-width: 940px; margin-inline: auto; padding: 18px 18px 30px; column-gap: 32px; row-gap: 36px; }
-.photo-event-grid--collage .photo-collage--people { width: 93%; margin-top: 26px; transform: rotate(-2deg); }
-.photo-event-grid--collage .photo-collage--spider { transform: rotate(1.5deg); }
-.photo-event-grid--collage .photo-collage--decorations { width: 88%; justify-self: end; transform: rotate(1.5deg); }
-.photo-event-grid--collage .photo-collage--small { width: 54%; justify-self: center; margin-top: 18px; transform: rotate(-2.5deg); }
+.photo-event-grid--collage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); max-width: 1000px; margin-inline: auto; padding: 18px 14px 30px; gap: 20px; align-items: center; }
+.photo-event-grid--collage .photo-collage--people { margin-top: 10px; transform: rotate(1.5deg); }
+.photo-event-grid--collage .photo-collage--spider { margin-top: 16px; transform: rotate(1.5deg); }
+.photo-event-grid--collage .photo-collage--decorations { transform: rotate(-2deg); }
+.photo-event-grid--collage .photo-collage--small { margin-top: 30px; transform: rotate(-2.5deg); }
 @media (max-width: 700px) {
+  .photo-gallery { grid-template-columns: 32px minmax(0, 1fr) 32px; column-gap: 6px; }
+  .photo-event-arrow { width: 32px; height: 44px; }
   .photo-event-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-  .photo-event-grid--collage { max-width: 480px; padding: 10px 12px 20px; gap: 32px; }
+  .photo-event-grid--collage { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, .58fr) minmax(0, 1.05fr); padding: 10px 5px 20px; gap: 8px; }
+  .photo-event-grid--collage img { padding: 3px; }
   .photo-event-grid--collage .photo-collage--people,
-  .photo-event-grid--collage .photo-collage--spider { width: 100%; margin-top: 0; justify-self: center; transform: rotate(-1deg); }
-  .photo-event-grid--collage .photo-collage--spider { transform: rotate(1deg); }
-  .photo-event-grid--collage .photo-collage--decorations { width: 90%; justify-self: center; transform: rotate(1deg); }
-  .photo-event-grid--collage .photo-collage--small { width: 58%; margin-top: 0; transform: rotate(-1.5deg); }
+  .photo-event-grid--collage .photo-collage--spider { margin-top: 4px; transform: rotate(1deg); }
+  .photo-event-grid--collage .photo-collage--decorations { transform: rotate(-1deg); }
+  .photo-event-grid--collage .photo-collage--small { margin-top: 12px; transform: rotate(-1.5deg); }
 }
 @media print {
   .photo-event-controls { display: none; }
