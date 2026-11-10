@@ -11,7 +11,7 @@
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg?v=4" sizes="any">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=4" sizes="180x180">
   <link rel="stylesheet" href="/styles.css?v=26">
-  <link rel="stylesheet" href="/photos/gallery.css?v=1">
+  <link rel="stylesheet" href="/photos/gallery.css?v=2">
   <script src="/script.js?v=4" defer></script>
   <script src="/photos/gallery.js?v=1" defer></script>
   <link rel="canonical" href="https://ramamurthylab.github.io/photos/">
@@ -38,8 +38,7 @@
   <main id="main">
     <section class="section wrap" id="photos" aria-labelledby="photos-title">
       <h1 class="page-title" id="photos-title">Photos</h1>
-      <p id="photos-empty">Photos coming soon.</p>
-      <div class="photo-gallery" id="photo-gallery" role="region" aria-label="Photos by event" hidden>
+      <div class="photo-gallery" id="photo-gallery" role="region" aria-label="Photos by event">
         <div class="photo-event-controls" id="photo-event-controls" hidden>
           <button class="photo-event-arrow photo-event-arrow--previous" type="button" aria-label="Previous event" aria-controls="photo-events" aria-disabled="true">
             <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M17 3 3 12l14 9Z"/></svg>
@@ -50,7 +49,33 @@
           </button>
         </div>
         <div id="photo-events">
-          <!-- Add one .photo-event article per event; see PHOTOS-EDITING.md. -->
+          <article class="photo-event" id="halloween-2026" aria-labelledby="halloween-2026-title">
+            <header class="photo-event-heading">
+              <h2 id="halloween-2026-title">Halloween 2026</h2>
+            </header>
+            <div class="photo-event-grid photo-event-grid--collage">
+              <figure class="photo-collage--people">
+                <a href="/assets/photos/halloween-2026/IMG_0068.jpeg">
+                  <img src="/assets/photos/halloween-2026/IMG_0068.jpeg" width="1324" height="2048" alt="Two lab members smiling beside a bowl of Halloween candy and cobweb decorations." decoding="async">
+                </a>
+              </figure>
+              <figure class="photo-collage--spider">
+                <a href="/assets/photos/halloween-2026/IMG_0096.jpeg">
+                  <img src="/assets/photos/halloween-2026/IMG_0096.jpeg" width="1536" height="2048" alt="A lab member posing beside a giant spider drawing, paper ghosts, and bats on the whiteboard." decoding="async">
+                </a>
+              </figure>
+              <figure class="photo-collage--decorations">
+                <a href="/assets/photos/halloween-2026/IMG_0040.jpeg">
+                  <img src="/assets/photos/halloween-2026/IMG_0040.jpeg" width="1536" height="2048" alt="A lab office decorated with cobwebs, Halloween dolls, purple lights, and miniature gravestones." loading="lazy" decoding="async">
+                </a>
+              </figure>
+              <figure class="photo-collage--small">
+                <a href="/assets/photos/halloween-2026/IMG_0064.jpeg">
+                  <img src="/assets/photos/halloween-2026/IMG_0064.jpeg" width="1059" height="2048" alt="A pink Halloween doll holding a model brain beside a decorated lab whiteboard." loading="lazy" decoding="async">
+                </a>
+              </figure>
+            </div>
+          </article>
         </div>
       </div>
     </section>

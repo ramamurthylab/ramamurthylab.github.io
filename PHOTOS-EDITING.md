@@ -39,3 +39,12 @@ With JavaScript, only the selected event is visible. Without JavaScript, all
 event articles remain visible in order. Previous/next buttons have accessible
 labels and announce the selected event. Left/right keys also navigate events
 when a control has keyboard focus.
+
+## Halloween 2026 collage
+
+This event adds `photo-event-grid--collage` to the standard grid. The figures
+use `photo-collage--people`, `photo-collage--spider`,
+`photo-collage--decorations`, and `photo-collage--small` for staggered sizing
+and gentle frame rotations. IMG_0064 is intentionally the smallest. Images
+keep their full proportions and link to the complete photo. On phones the
+figures stack with clear separation, with IMG_0064 still smaller.
